@@ -11,7 +11,7 @@ def respond():
     update = telegram.Update.de_json(request.get_json(force=True), bot)
     chat_id = update.message.chat_id
     text = update.message.text
-    bot.send_message(chat_id=chat_id, text=f"Bot nhận được tin nhắn: {text}")
+    bot.send_message(chat_id=chat_id, text=text)
     return "OK", 200
 
 @app.route('/')
